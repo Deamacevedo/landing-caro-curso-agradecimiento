@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta de colores del proyecto basada en la imagen proporcionada */
+  --color-purple: #7C6FA8;        /* Morado principal */
+  --color-blue: #6B99B8;          /* Azul */
+  --color-gray-light: #D5D5DB;    /* Gris claro */
+  --color-sage: #7B9B92;          /* Verde salvia */
+  --color-mauve: #A8918E;         /* Malva */
+
+  /* Colores adicionales para UI */
+  --color-white: #FFFFFF;
+  --color-cream: #FAF8F6;
+  --color-text-dark: #2D2D2D;
+  --color-text-gray: #5A5A5A;
+
+  /* Fuentes */
+  --font-sans: 'Raleway Variable', 'Inter', system-ui, sans-serif;
+
+  /* Gradientes personalizados */
+  --gradient-purple: linear-gradient(135deg, #7C6FA8 0%, #6B99B8 100%);
+  --gradient-sage: linear-gradient(135deg, #7B9B92 0%, #6B99B8 100%);
+  --gradient-hero: linear-gradient(135deg, #7C6FA8 0%, #6B99B8 50%, #7B9B92 100%);
+
+  /* Animaciones */
+  --animate-fade-in: fadeIn 0.5s ease-in;
+  --animate-slide-up: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Componentes personalizados */
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
+    background-color: var(--color-purple);
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
+    background-color: var(--color-sage);
+  }
+
+  .section {
+    @apply py-16 px-4 md:px-8 lg:px-16;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8;
+    color: var(--color-text-dark);
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-center max-w-3xl mx-auto mb-12;
+    color: var(--color-text-gray);
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .gradient-purple {
+    background: var(--gradient-purple);
+  }
+
+  .gradient-sage {
+    background: var(--gradient-sage);
+  }
+
+  .text-gradient {
+    background: var(--gradient-purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+  .bg-purple {
+    background-color: var(--color-purple);
+  }
+
+  .bg-blue {
+    background-color: var(--color-blue);
+  }
+
+  .bg-gray-light {
+    background-color: var(--color-gray-light);
+  }
+
+  .bg-sage {
+    background-color: var(--color-sage);
+  }
+
+  .bg-mauve {
+    background-color: var(--color-mauve);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .text-purple {
+    color: var(--color-purple);
+  }
+
+  .text-blue {
+    color: var(--color-blue);
+  }
+
+  .text-sage {
+    color: var(--color-sage);
+  }
+
+  .text-mauve {
+    color: var(--color-mauve);
+  }
+
+  .text-text-dark {
+    color: var(--color-text-dark);
+  }
+
+  .text-text-gray {
+    color: var(--color-text-gray);
+  }
+
+  .border-purple {
+    border-color: var(--color-purple);
+  }
+
+  .border-blue {
+    border-color: var(--color-blue);
+  }
+
+  .border-sage {
+    border-color: var(--color-sage);
+  }
+
+  .from-purple {
+    --tw-gradient-from: var(--color-purple);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .to-blue {
+    --tw-gradient-to: var(--color-blue);
+  }
+
+  .from-sage {
+    --tw-gradient-from: var(--color-sage);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .to-purple {
+    --tw-gradient-to: var(--color-purple);
+  }
+
+  .from-mauve {
+    --tw-gradient-from: var(--color-mauve);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+}

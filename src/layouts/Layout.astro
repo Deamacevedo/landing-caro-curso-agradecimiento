@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import "@fontsource-variable/raleway";
+
+export interface Props {
+  title?: string;
+}
+
+const { title = "El Poder del Agradecimiento - Carolina Novoa" } = Astro.props;
+
+const siteUrl = "https://carolinanovoa.com/agradecimiento/";
+const description = "Cambia tu energía. Atrae abundancia. Vive en gratitud. Curso online de 3 módulos para transformar tu vida a través del poder del agradecimiento con Carolina Novoa.";
+const image = "./og-image.jpg";
+const canonical = Astro.url.href;
+const fullImageUrl = new URL(image, siteUrl).href;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/png" href="/iconxd.png" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonical} />
+
+		<!-- Apple Touch Icon -->
+		<link rel="apple-touch-icon" href="/iconxd.png" />
+
+		<!-- SEO Meta Tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={fullImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="Carolina Novoa - El Poder del Agradecimiento" />
+		<meta property="og:locale" content="es_ES" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonical} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={fullImageUrl} />
+
+		<!-- Keywords -->
+		<meta name="keywords" content="agradecimiento, gratitud, abundancia, transformación personal, Carolina Novoa, crecimiento espiritual, bienestar emocional, energía positiva, sanación" />
+
+		<!-- Author -->
+		<meta name="author" content="Carolina Novoa - Terapeuta Espiritual y Health Coach" />
+
+		<!-- Robots -->
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+		<!-- Theme color -->
+		<meta name="theme-color" content="#7C6FA8" />
+		<meta name="msapplication-TileColor" content="#7C6FA8" />
+
+		<!-- Prevent zoom on iOS -->
+		<meta name="format-detection" content="telephone=no" />
+
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		font-family: "Raleway Variable", "Inter", system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.6;
+		font-display: swap;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+</style>
